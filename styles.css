@@ -1,0 +1,290 @@
+
+    html {
+        font-size: 35px;
+        
+        /* background: #98BCF4; */
+    }
+
+    body {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        font-family: 'Oswald', sans-serif;
+        background: url(bg.jpg);
+        /* background-size: 100vh 100vw; */
+        background-repeat: no-repeat;
+        height: 100vh;
+        width: 100vw;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Merriweather:ital,wght@1,300&family=Oswald:wght@200;400&family=Titan+One&display=swap');
+    h2
+    {
+    text-transform: uppercase;
+    background-image: linear-gradient(
+        -225deg,
+        #17ece8 0%,
+        #44107a 29%,
+        #ff1361 67%,
+        #fff800 100%
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+        font-size: 90px;
+    }
+
+    @keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+    }
+
+    .score {
+        background:rgb(228, 40, 16);
+        padding: 0 48px;
+        line-height: 1;
+        border-radius: 16px;
+        color: #fff;
+        margin-left: 15px;
+        margin-bottom: 10vh;
+        opacity: 0.8;
+        margin: 20px;
+        
+    }
+
+    .game {
+        width: 600px;
+        height: 400px;
+        display:flex;
+        flex-wrap:wrap;
+        margin: 0 auto;
+        
+    }
+
+    .hole{
+        flex: 1 0 33.33%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .hole:after{
+        display:block;
+        background: url(dirt.png) bottom center no-repeat;
+        background-size:contain;
+        content: '';
+        width: 100%;
+        height: 90px;
+        position: absolute;
+        z-index: 2;
+        bottom: -30px;
+    }
+
+    .mole {
+        background: url('cropped.png') bottom center no-repeat;
+        background-size: 80%;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        height: 100%;
+        transition: all 0.4s;
+    }
+
+    .hole.up .mole{
+        top:0;
+    }
+
+    button{
+        width:150px;
+        font-size: 35px;
+        height: 70px;
+        color: #fff;
+        background-color: blue;
+        border-radius: 10px;
+        margin-left: 20px;
+        margin-top: 90px;
+        opacity: 0.8;
+        
+    }
+
+    @media (min-width: 667px) and (max-width: 1024px){
+        
+        h1 {
+            display: none;
+        }
+        .score {
+        background:blue;
+        padding: 0 12px;
+        line-height: 1;
+        border-radius: 16px;
+        color: #fff;
+        font-size: 40px;
+        margin-left: 20px;
+    }
+
+        .hole.up .mole{
+            top:17px;
+        }
+    }
+
+    @media (max-width: 667px){
+
+        .game {
+            width: 667px;
+            height: 300px;
+            display:flex;
+            flex-wrap:wrap;
+            margin: 0 auto;
+        }
+
+        .score{
+            width:35px;
+            font-size: 15px;
+            height: 40px;
+            color: #fff;
+            background-color: blue;
+            border-radius: 10px;
+            margin-left: 10px;
+            margin-top: 10px;
+            padding: 5px;
+            }
+
+            button{
+                margin: 10px 10px 10px 10px;
+                height: 40px;
+                width: 75px;
+                font-size: 15px;
+            }
+
+        .hole:after{
+            display:block;
+            background: url(dirt.png) bottom center no-repeat;
+            background-size:contain;
+            content: '';
+            max-width: 70%;
+            height: 60px;
+            position: absolute;
+            z-index: 2;
+            bottom: -30px;
+        }
+
+        .mole {
+            background: url(cropped.png) bottom center no-repeat;
+            background-size: 60%;
+            position: absolute;
+            top: 100%;
+            max-width: 70%;
+            height: 70%;
+            transition: all 0.4s;
+        }
+
+        .hole.up .mole{
+            top:50px;
+        }
+    }
+    .button {
+        border-radius: 4px;
+        background-color: #d82121;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 28px;
+        padding: 20px;
+        width: 120px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+        /* height: 8vh; */
+        
+    }
+    
+    .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+    
+    .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+    
+    .button:hover span {
+        padding-right: 25px;
+    }
+    
+    .button:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+    .button {
+        width: 220px;
+            
+        border: none;
+        outline: none;
+        color: #fff;
+        background: #111;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+    }
+
+    .button:before {
+        content: '';
+        background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+        position: absolute;
+        top: -2px;
+        left:-2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing 20s linear infinite;
+        opacity: 0;
+        transition: opacity .3s ease-in-out;
+        border-radius: 10px;
+    }
+
+    .button:active {
+        color: #000
+    }
+
+    .button:active:after {
+        background: transparent;
+    }
+
+    .button:hover:before {
+        opacity: 1;
+    }
+
+    .button:after {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #111;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+    }
+
+    @keyframes glowing {
+        0% { background-position: 0 0; }
+        50% { background-position: 400% 0; }
+        100% { background-position: 0 0; }
+    }
+
